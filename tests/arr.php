@@ -243,6 +243,7 @@ class Test_Arr extends TestCase
 	 */
 	public function test_get_throws_exception_when_array_is_not_an_array()
 	{
+		$this->expectException(\InvalidArgumentException::class);
 		$output = Arr::get('Jack', 'name', 'Unknown Name');
 	}
 
