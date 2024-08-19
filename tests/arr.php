@@ -568,6 +568,7 @@ class Test_Arr extends TestCase
 	 */
 	public function test_sort_of_non_array()
 	{
+		$this->expectException(\InvalidArgumentException::class);
 		$sorted = Arr::sort('not an array', 'foo.key');
 	}
 
@@ -714,6 +715,7 @@ class Test_Arr extends TestCase
 	 */
 	public function test_to_assoc_with_odd_number_of_elements()
 	{
+		$this->expectException(\BadMethodCallException::class);
 		$arr = array('foo', 'bar', 'baz');
 		Arr::to_assoc($arr);
 	}
